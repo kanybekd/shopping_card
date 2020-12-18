@@ -1,0 +1,1 @@
+export const asus = "./images/asus.jpg"
