@@ -6,17 +6,16 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border:1px solid red; */
+  border:1px solid red;
   width: 30%;
   margin: 0 auto;
-  
   position: relative;
   background-color: white;
 
 }
-@media only screen and (max-width: 320) {
+@media only screen and (max-width: 400px) {
   .App {
-    width: 97%;
+    width: 100%;
   }
 }
 
