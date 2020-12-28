@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {without} from "lodash"
 import "./App.css"
 import Phones from "./Phones.jsx"
 const products = [
@@ -83,12 +84,13 @@ export default class App extends Component {
   }
   removeItem=(id)=>{
     const {products, counter, total} = this.state;
-    const newProd = [...products]
+    let newProd = [...products]
     const obj = newProd.findIndex(item=>item.id===id)
     const newCount = counter-newProd[obj].count
     let newTotal =total;
     newTotal -= products[obj].count*products[obj].price
-    newProd.splice(obj,1)
+    newProd = without(newProd,newProd[obj] ) // lodash version 
+    // newProd.splice(obj,1)
     this.setState({products:newProd,counter:newCount,total:newTotal})
   }
   render() {
